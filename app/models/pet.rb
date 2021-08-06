@@ -1,5 +1,7 @@
 class Pet < ApplicationRecord
 
+  has_many :pet_history
+
   def history_count
     #TODO-implement
   end
