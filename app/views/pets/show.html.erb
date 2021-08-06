@@ -15,6 +15,10 @@
   <%= @pet.birthdate %>
 </p>
 
+<p>
+  <%= link_to 'History', pet_pet_histories_path(@pet.id) %>
+</p>
+
 
 <table>
   <thead>
