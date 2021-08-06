@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Phone</th>
       <th>Email</th>
+      <th>Pets</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= client.name %></td>
         <td><%= client.phone %></td>
         <td><%= client.email %></td>
+        <td><%= client.pets_count %></td>
         <td><%= link_to 'Show', client %></td>
         <td><%= link_to 'Edit', edit_client_path(client) %></td>
         <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>

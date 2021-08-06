@@ -16,6 +16,32 @@
 </p>
 
 <p>
+  <strong>Pets info</strong>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Max height</th>
+      <th>Max weight</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client.pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.max_weight %></td>
+        <td><%= pet.max_height %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<p>
 <%= link_to 'Go to pets', client_pets_path(@client.id) %>
 </p>
 
