@@ -38,7 +38,7 @@
 </table>
 
 <p>
-  <%= link_to 'Go to History', pet_pet_histories_path(@pet.id) %>
+  <%= link_to 'Go to History', client_pet_pet_histories_path(@client.id, @pet.id) %>
 </p>
 
 <table>
@@ -61,5 +61,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to 'Edit', edit_client_pet_path(@client, @pet) %> |
+<%= link_to 'Back', client_pets_path %>

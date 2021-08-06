@@ -15,5 +15,10 @@
   <%= @client.email %>
 </p>
 
+<p>
+<%= link_to 'Go to pets', client_pets_path(@client.id) %>
+</p>
+
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
