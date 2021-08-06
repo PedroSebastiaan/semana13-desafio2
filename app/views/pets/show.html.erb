@@ -16,17 +16,38 @@
 </p>
 
 <p>
-  <%= link_to 'History', pet_pet_histories_path(@pet.id) %>
+  <strong>History</strong>
 </p>
-
 
 <table>
   <thead>
     <tr>
-      <th>Peso promedio</th>
-      <th>Altura promedio</th>
-      <th>Peso Máximo</th>
-      <th>Altura Máxima</th>
+      <th>Weights</th>
+      <th>Heigths</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @pet.pet_history.each do |pet_history| %>
+      <tr>
+        <td><%= pet_history.weight %></td>
+        <td><%= pet_history.heigth %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Go to History', pet_pet_histories_path(@pet.id) %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight average</th>
+      <th>Heigth average</th>
+      <th>Max weight</th>
+      <th>Max heigth</th>
     </tr>
   </thead>
 

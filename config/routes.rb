@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   resources :pets do
     resources :pet_histories
     delete 'pet_histories/:id', to: 'pet_histories#destroy', as: 'pet_histories_destroy'
