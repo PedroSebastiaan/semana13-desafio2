@@ -3,6 +3,9 @@ class Pet < ApplicationRecord
   has_many :pet_history, dependent: :destroy
   belongs_to :client
 
+  validates :name, presence: true
+  validates :race, presence: true
+
   def history_count
     total_visits = 0
     self.pet_history.each do |pet_history|
