@@ -1,32 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pet Histories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Weight</th>
-      <th>Heigth</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pet_histories.each do |pet_history| %>
-      <tr>
-        <td><%= pet_history.weight %></td>
-        <td><%= pet_history.heigth %></td>
-        <td><%= pet_history.description %></td>
-        <td><%= link_to 'Show', client_pet_pet_history_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id) %></td>
-        <td><%= link_to 'Edit', edit_client_pet_pet_history_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id) %></td>
-        <td><%= link_to 'Destroy', client_pet_pet_histories_destroy_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="p-3 mb-2 bg-danger text-white">
+  <h1 class="display-1 text-center">Pet Histories</h1>
+</div>
 <br>
-
-<%= link_to 'New Pet History', new_client_pet_pet_history_path(@client.id, @pet.id) %>
-<%= link_to 'Back', client_pet_path(@client.id, @pet.id) %>
+<div class="container text-center">
+  <p class="text-center display-4">Here you can find all the visits of the pet and the respective info.</p>
+  <br>
+  <p id="notice"><%= notice %></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Weight</th>
+        <th>Heigth</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pet_histories.each do |pet_history| %>
+        <tr>
+          <td><%= pet_history.weight %></td>
+          <td><%= pet_history.heigth %></td>
+          <td><%= pet_history.description %></td>
+          <td><%= link_to 'Show', client_pet_pet_history_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id) %></td>
+          <td><%= link_to 'Edit', edit_client_pet_pet_history_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id) %></td>
+          <td><%= link_to 'Destroy', client_pet_pet_histories_destroy_path(pet_history.pet.client_id, pet_history.pet_id, pet_history.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Pet History', new_client_pet_pet_history_path(@client.id, @pet.id) %>
+  <%= link_to 'Back', client_pet_path(@client.id, @pet.id) %>
+</div>

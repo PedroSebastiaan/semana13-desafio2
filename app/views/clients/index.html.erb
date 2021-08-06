@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Clients</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Pets</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.name %></td>
-        <td><%= client.phone %></td>
-        <td><%= client.email %></td>
-        <td><%= client.pets_count %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="p-3 mb-2 bg-success text-white">
+  <h1 class="display-1 text-center">Clients</h1>
+</div>
 <br>
+<div class="container text-center">
+  <p class="text-center display-4">Here you can find all our clients, also, you can make a new entry in "Enter a new client". </p>
+  <br>
+  <p id="notice"><%= notice %></p>
+  <div>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Pets</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= client.name %></td>
+          <td><%= client.phone %></td>
+          <td><%= client.email %></td>
+          <td><%= client.pets_count %></td>
+          <td><%= link_to 'Show', client %></td>
+          <td><%= link_to 'Edit', edit_client_path(client) %></td>
+          <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <button type="button" class="btn btn-success"><%= link_to 'Enter a new client', new_client_path%></button>
+  </div>
+</div>
 
-<%= link_to 'New Client', new_client_path %>

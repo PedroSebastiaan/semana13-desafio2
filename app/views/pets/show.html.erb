@@ -1,65 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-5">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @pet.name %>
+  </p>
 
-<p>
-  <strong>Race:</strong>
-  <%= @pet.race %>
-</p>
+  <p>
+    <strong>Race:</strong>
+    <%= @pet.race %>
+  </p>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @pet.birthdate %>
-</p>
+  <p>
+    <strong>Birthdate:</strong>
+    <%= @pet.birthdate %>
+  </p>
 
-<p>
-  <strong>History</strong>
-</p>
+  <p>
+    <strong>History</strong>
+  </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Weights</th>
-      <th>Heigths</th>
-    </tr>
-  </thead>
-
-  <tbody>
-      <% @pet.pet_history.each do |pet_history| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= pet_history.weight %></td>
-        <td><%= pet_history.heigth %></td>
+        <th>Weights</th>
+        <th>Heigths</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<p>
-  <%= link_to 'Go to History', client_pet_pet_histories_path(@client.id, @pet.id) %>
-</p>
+    <tbody>
+        <% @pet.pet_history.each do |pet_history| %>
+        <tr>
+          <td><%= pet_history.weight %></td>
+          <td><%= pet_history.heigth %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Weight average</th>
-      <th>Heigth average</th>
-      <th>Max weight</th>
-      <th>Max heigth</th>
-    </tr>
-  </thead>
+  <p>
+    <%= link_to 'Go to History', client_pet_pet_histories_path(@client.id, @pet.id) %>
+  </p>
 
-  <tbody>
-    <tr>
-      <td><%= @pet.avg_weight %></td>
-      <td><%= @pet.avg_height %></td>
-      <td><%= @pet.max_weight %></td>
-      <td><%= @pet.max_height%></td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Weight average</th>
+        <th>Heigth average</th>
+        <th>Max weight</th>
+        <th>Max heigth</th>
+      </tr>
+    </thead>
 
-<%= link_to 'Edit', edit_client_pet_path(@client, @pet) %> |
-<%= link_to 'Back', client_pets_path %>
+    <tbody>
+      <tr>
+        <td><%= @pet.avg_weight %></td>
+        <td><%= @pet.avg_height %></td>
+        <td><%= @pet.max_weight %></td>
+        <td><%= @pet.max_height%></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Edit', edit_client_pet_path(@client, @pet) %> |
+  <%= link_to 'Back', client_pets_path %>
+</div>
+

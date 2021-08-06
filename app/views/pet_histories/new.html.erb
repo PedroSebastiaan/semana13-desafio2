@@ -1,5 +1,6 @@
-<h1>New Pet History</h1>
-
-<%= render 'form', pet_history: @pet_history %>
-
-<%= link_to 'Back', client_pet_pet_histories_path(@client.id, @pet.id)%>
+<div class="container text-center my-5">
+    <h1 class="display-4 my-5">New Pet History</h1>
+    <%= render 'form', pet_history: @pet_history %>
+    <br>
+    <%= link_to 'Back', client_pet_pet_histories_path(@client.id, @pet.id)%>
+</div>

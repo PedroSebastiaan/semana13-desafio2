@@ -1,50 +1,43 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<p>
-  <strong>Pets info</strong>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Max height</th>
-      <th>Max weight</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @client.pets.each do |pet| %>
+<div class="container my-5">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Name:</strong>
+    <%= @client.name %>
+  </p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @client.phone %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @client.email %>
+  </p>
+  <p>
+    <strong>Pets info</strong>
+  </p>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= pet.name %></td>
-        <td><%= pet.max_weight %></td>
-        <td><%= pet.max_height %></td>
+        <th>Name</th>
+        <th>Max height</th>
+        <th>Max weight</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @client.pets.each do |pet| %>
+        <tr>
+          <td><%= pet.name %></td>
+          <td><%= pet.max_weight %></td>
+          <td><%= pet.max_height %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p>
+  <%= link_to 'Go to pets', client_pets_path(@client.id) %>
+  </p>
+  <%= link_to 'Edit', edit_client_path(@client) %> |
+  <%= link_to 'Back', clients_path %>
+</div>
 
-
-<p>
-<%= link_to 'Go to pets', client_pets_path(@client.id) %>
-</p>
-
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>

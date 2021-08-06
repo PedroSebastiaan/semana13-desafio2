@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-5">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Weight:</strong>
+    <%= @pet_history.weight %>
+  </p>
+  <p>
+    <strong>Heigth:</strong>
+    <%= @pet_history.heigth %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @pet_history.description %>
+  </p>
+  <%= link_to 'Edit', edit_client_pet_pet_history_path(@pet_history.pet.client_id, @pet_history.pet_id, @pet_history.id) %> |
+  <%= link_to 'Back', client_pet_pet_histories_path(@pet_history.pet.client_id, @pet_history.pet_id)%>
+</div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @pet_history.weight %>
-</p>
-
-<p>
-  <strong>Heigth:</strong>
-  <%= @pet_history.heigth %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pet_history.description %>
-</p>
-
-<%= link_to 'Edit', edit_client_pet_pet_history_path(@pet_history.pet.client_id, @pet_history.pet_id, @pet_history.id) %> |
-<%= link_to 'Back', client_pet_pet_histories_path(@pet_history.pet.client_id, @pet_history.pet_id)%>
